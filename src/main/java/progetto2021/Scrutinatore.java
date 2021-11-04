@@ -15,13 +15,13 @@ public class Scrutinatore {
 		id = newID;
 		authenticated = auth;
 	}
-	private Boolean placeholder4SPID(String checkID, String password) {
+	private Boolean placeholder4login(String checkID, String password) {
 		if (password.equals("1234")) return true;
 		else return false;
 	}
 	
 	public Scrutinatore login(String password) {
-		if (placeholder4SPID(id , password)) return new Scrutinatore(id , true);
+		if (placeholder4login(id , password)) return new Scrutinatore(id , true);
 		else return new Scrutinatore(id, false);
 	}
 	
@@ -30,7 +30,7 @@ public class Scrutinatore {
 		if (this == o) return true;
 		if (!(o instanceof Scrutinatore)) return false;
 		Scrutinatore echeck = (Scrutinatore) o;
-		if (echeck.id == id && echeck.authenticated == authenticated) return true;
+		if (echeck.id.equals(id) && echeck.authenticated == authenticated) return true;
 		else return false;
 		
  	}
